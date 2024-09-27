@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DevIO.UI.Site.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using DevIO.UI.Site.Models;
 
 namespace DevIO.UI.Site.Data
 {
