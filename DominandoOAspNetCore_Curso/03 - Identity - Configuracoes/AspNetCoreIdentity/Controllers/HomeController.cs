@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Diagnostics;
+using AspNetCoreIdentity.Extensions;
 
 namespace AspNetCoreIdentity.Controllers
 {
@@ -33,10 +34,27 @@ namespace AspNetCoreIdentity.Controllers
             return View();
         }
 
+        [Authorize(Policy = "PodeExcluir")]
+        public IActionResult SecretClaim() { 
+            return View("Secret");
+        }
+
+        [Authorize(Policy = "PodeEscrever")]
+        public IActionResult SecretClaimGravar()
+        {
+            return View("Secret");
+        }
+
+        [ClaimsAuthorize("Produtos", "Ler")]
+        public IActionResult ClaimCustom()
+        {
+            return View("Secret");
+        }
+
         [Authorize(Roles = "Admin, Gestor")]
         public IActionResult Secret()
         {
-            return View();
+            return View("Secret");
             //return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 
            /* try

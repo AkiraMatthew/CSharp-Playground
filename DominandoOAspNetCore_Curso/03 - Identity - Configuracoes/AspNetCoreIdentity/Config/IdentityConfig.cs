@@ -18,8 +18,8 @@ namespace AspNetCoreIdentity.Config
             {
                 options.AddPolicy("PodeExcluir", policy => policy.RequireClaim("PodeExcluir"));
 
-                options.AddPolicy("PodeLer", policy => policy.Requirements.Add(new PermissaoNecessaria("PodeLer")));
-                options.AddPolicy("PodeEscrever", policy => policy.Requirements.Add(new PermissaoNecessaria("PodeEscrever")));
+                options.AddPolicy("PodeLer", policy => policy.RequireClaim("PodeLer"));
+                options.AddPolicy("PodeEscrever", policy => policy.RequireClaim("PodeEscrever"));
             });
 
             return services;

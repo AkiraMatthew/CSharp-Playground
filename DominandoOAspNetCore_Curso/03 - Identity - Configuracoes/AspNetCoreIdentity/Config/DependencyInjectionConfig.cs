@@ -10,7 +10,6 @@ namespace AspNetCoreIdentity.Config
     {
         public static IServiceCollection ResolveDependencies(this IServiceCollection services)
         {
-
             services.AddSingleton<IAuthorizationHandler, PermissaoNecessariaHandler>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
